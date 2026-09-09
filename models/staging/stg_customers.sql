@@ -8,7 +8,7 @@ with customer as (
     c_acctbal as account_balance,
     c_mktsegment as market_segment,
     c_comment as comment
- from sourcedb.mkmall.customers
+from {{ source('src','customers')}}
 )
 
 select * from customer

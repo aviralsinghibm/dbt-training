@@ -1,0 +1,8 @@
+sources:
+  - name: src
+    database: sourcedb
+    schema: mkmall
+    tables: 
+      - name: regions 
+      - name: nations 
+      - name: customers
