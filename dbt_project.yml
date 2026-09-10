@@ -40,3 +40,7 @@ models:
   my_new_project:
     staging:
       +materialized: table
+
+# Store rows returned by failed tests
+# tests:
+#   +store_failures: true
