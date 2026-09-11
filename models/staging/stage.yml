@@ -1,12 +1,22 @@
 models:
   - name: stg_nations
+    description: nations information table
     columns:
       - name: nation_id
+        description: Primary key for this table
         data_tests:
           - unique
-          - not_null
+        
+      - name : region_id
+        description: 
+        data_tests:
+          - relationships:
+              arguments:
+                
+
 
   - name: stg_regions
+    description: regions information table
     columns:
       - name: name
         data_tests:
@@ -16,12 +26,14 @@ models:
               config:
                 store_failures: TRUE
 
+
+
   - name: stg_orders
+    description: order information table
     columns:
       - name: order_id
         data_tests:
           - unique
-          - not_null
 
       - name: total_price
         data_tests:

@@ -4,9 +4,13 @@ sources:
     schema: mkmall
     tables: 
       - name: regions 
+        description: raw regions
       - name: nations 
+        description: raw nations
       - name: customers
+        description: raw customers
       - name: orders
+        description: raw orders
         config:
           freshness:
             warn_after: {count: 6 , period: day}
@@ -15,6 +19,7 @@ sources:
 
 
       - name: lineitems
+        description: raw lineitems
         config:
           freshness:
             warn_after: {count: 62 , period: day}
@@ -22,5 +27,6 @@ sources:
           loaded_at_field: l_commitdate::timestamp_ntz
       
       - name: suppliers
+        description: raw suppliers 
             
         
