@@ -6,8 +6,6 @@ models:
         description: Primary key for this table
         data_tests:
           - unique
-                
-
 
   - name: stg_regions
     description: regions information table
@@ -16,11 +14,9 @@ models:
         data_tests:
           - accepted_values:
               arguments:
-                values: ['AFRICA', 'AMERICA', 'ASIA', 'EUROPE']
+                values: ['AFRICA', 'AMERICA', 'ASIA', 'EUROPE', 'MIDDLE EAST']
               config:
-                store_failures: TRUE
-
-
+                store_failures: true
 
   - name: stg_orders
     description: order information table
@@ -33,6 +29,7 @@ models:
         data_tests:
           - order_values:
               arguments:
-                val:"{{var('v_min_order') }}"
+                val: "{{ var('v_min_order') }}"
+                min_val :  "{{ var('v_min_order') }}"
               config:
-                store_failures: true 
+                store_failures: true
