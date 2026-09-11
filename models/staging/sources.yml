@@ -7,6 +7,11 @@ sources:
         description: raw regions
       - name: nations 
         description: raw nations
+        columns:
+          - name: n_nationkey
+            data_tests:
+              - unique
+              
       - name: customers
         description: raw customers
       - name: orders
