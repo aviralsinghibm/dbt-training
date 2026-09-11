@@ -7,13 +7,10 @@
 -- These rows are the "bad records" that we want dbt to report.
 
 
-
 {{ config(store_failures=true) }}
 
 select
     order_id,
     total_price
 from {{ ref('stg_orders') }}
-where total_price <= {{ var('v_min_order')}}
-
-
+where total_price <= {{ var('v_min_order') }}
