@@ -51,3 +51,6 @@ models:
 # Store rows returned by failed tests
 tests:
   +store_failures: true
+
+vars:
+  v_min_order: 850

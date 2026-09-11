@@ -13,12 +13,12 @@ models:
     description: regions information table
     columns:
       - name: name
-#        data_tests:
-#          - accepted_values:
-#              arguments:
-#                values: ['AFRICA', 'AMERICA', 'ASIA', 'EUROPE']
-#              config:
-#                store_failures: TRUE
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['AFRICA', 'AMERICA', 'ASIA', 'EUROPE']
+              config:
+                store_failures: TRUE
 
 
 
@@ -33,4 +33,6 @@ models:
         data_tests:
           - order_values:
               arguments:
-                min_val: -10000
+                val:"{{var('v_min_order') }}"
+              config:
+                store_failures: true 
