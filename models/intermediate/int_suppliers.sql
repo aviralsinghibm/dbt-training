@@ -1,9 +1,11 @@
-{{ config(materialized='incremental') }}
+{{ config(materialized='incremental', unique_key='supplier_id' ) }}
+
 
 with supplier as (
 
-    select *
-    from {{ ref('stg_suppliers') }}
+    select  supplier_id, n.sname supplier_name,* exclude (supplier_id,supplier_name) 
+    from {{ ref('stg_suppliers') }} s
+    join {{ref('supplier_names')}} n on s.supplier_id = n.skey
 
     {% if is_incremental() %}
 
@@ -17,3 +19,7 @@ with supplier as (
 )
 
 select * from supplier
+
+
+
+ 
